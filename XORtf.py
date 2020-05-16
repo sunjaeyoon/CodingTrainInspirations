@@ -66,8 +66,7 @@ for i in range(cols):
         x2 = j/rows
         xs.append([x1,x2])
 
-#out = cv2.VideoWriter('output.mp4', -1, 20.0, (100,100))    
-
+#Train and make predictions each epoch
 fig =plt.figure()
 collection = []#np.empty([100,100,100])
 for i in range(5000):
@@ -78,17 +77,11 @@ for i in range(5000):
     im = plt.imshow(imarr, animated = True)
     collection.append([im]) 
     
+#Create ans Save the Animation
 ani = animation.ArtistAnimation(fig, collection, interval=50, blit=True,
                               repeat_delay=1000)
 ani.save('xor.htm')
-#plt.show()
-    #out.write(img)
-#plt.figure()
-#plt.imshow()
-# Release everything if job is finished
-#cap.release()
-#out.release()
-#cv2.destroyAllWindows()
+
 
 
     
